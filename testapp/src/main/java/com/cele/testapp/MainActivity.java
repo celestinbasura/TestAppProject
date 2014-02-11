@@ -30,10 +30,12 @@ public class MainActivity extends ActionBarActivity {
         TextView SSID, connectedIP, deviceIP;
         SSID = (TextView) findViewById(R.id.txtSSID);
         SSID.setText(status.getWifiName(this));
+        ModBusConnect connecter = new ModBusConnect();
         connectedIP = (TextView) findViewById(R.id.txtconnectedIP);
-
+        connectedIP.setText(connecter.deviceAddress);
         deviceIP = (TextView) findViewById(R.id.txtphoneIP);
         deviceIP.setText("" + status.GetLocalIpAddress(this));
+
 
 
 
