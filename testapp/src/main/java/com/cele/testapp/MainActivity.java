@@ -26,15 +26,34 @@ public class MainActivity extends ActionBarActivity {
         btnShowPoints = (Button) findViewById(R.id.buttonShowPoints);
         // associate the layout to the activity
         setContentView(R.layout.connection_screen);
-        //status.checkAvailableConnection();
-        TextView SSID, connectedIP, deviceIP;
+
+
+        TextView SSID, connectedIP, deviceIP, networkType, homeConnected, isConnected;
         SSID = (TextView) findViewById(R.id.txtSSID);
-        SSID.setText(status.getWifiName(this));
+        String ssid =status.getWifiName(this);
+        SSID.setText(ssid);
+        String homeSSID = "\"filip\"";
+
+        ModBusConnect connect = new ModBusConnect();
+        connect.execute(true);
+
         ModBusConnect connecter = new ModBusConnect();
         connectedIP = (TextView) findViewById(R.id.txtconnectedIP);
         connectedIP.setText(connecter.deviceAddress);
         deviceIP = (TextView) findViewById(R.id.txtphoneIP);
         deviceIP.setText("" + status.GetLocalIpAddress(this));
+        networkType = (TextView) findViewById(R.id.txtNetworkType);
+        networkType.setText(status.checkAvailableConnection(this));
+        homeConnected = (TextView) findViewById(R.id.txtHome);
+        if(ssid.equals(homeSSID)){
+            homeConnected.setText("You are home");
+        }
+        isConnected = (TextView) findViewById(R.id.txtisConnected);
+        if(connect.doInBackground(true)){
+            isConnected.setText("You are connected");
+        }
+
+
 
 
 

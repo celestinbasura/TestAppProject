@@ -46,6 +46,53 @@
     android:textSize="20dp"
     android:width="150dp" />
 </TableRow>
+    <TableRow>
+        <TextView
+            android:text="Network Type:"
+            android:textSize="20dp"
+            android:height="50dp"
+            android:width ="150dp" />
+        />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/txtNetworkType"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:textSize="20dp"
+            android:width="150dp" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="Home network:"
+            android:textSize="20dp"
+            android:height="50dp"
+            android:width ="150dp" />
+        />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/txtHome"
+            android:text="Not home"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:textSize="20dp"
+            android:width="150dp" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="Is connected:"
+            android:textSize="20dp"
+            android:height="50dp"
+            android:width ="150dp" />
+        />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/txtisConnected"
+            android:text="Not Connected"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:textSize="20dp"
+            android:width="150dp" />
+    </TableRow>
 <TableRow>
 <Button
     android:layout_width="fill_parent"

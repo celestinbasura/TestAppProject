@@ -27,6 +27,7 @@ public class WiFiState extends  Activity{
     android.net.NetworkInfo wifi = null;
     WifiManager wifiManager = null;
     ConnectivityManager connMgr = null;
+    Context mContext;
 
     public WiFiState(Context mContext) {
         this.mContext = mContext;
@@ -38,36 +39,26 @@ public class WiFiState extends  Activity{
         wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
         connMgr = (ConnectivityManager) this
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
-        wifi = connMgr
-                .getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
         mobile = connMgr
                 .getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-       
     }
 
-    Context mContext;
+
+    public String checkAvailableConnection(Context context) {
+        connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        wifi = connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        mobile = connMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
 
-    void checkAvailableConnection() {
+        if (wifi.isAvailable() && wifi.isConnectedOrConnecting()) {
+            return "WiFi";
 
-
-        if (wifi.isAvailable()) {
-
-            WifiManager myWifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
-            WifiInfo myWifiInfo = myWifiManager.getConnectionInfo();
-            int ipAddress = myWifiInfo.getIpAddress();
-            System.out.println("WiFi address is "
-                    + formatIpAddress(ipAddress));
-
-        } else if (mobile.isAvailable()) {
-
-
-            Toast.makeText(this, "3G Available", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "No Network Available", Toast.LENGTH_LONG)
-                    .show();
+        }if (mobile.isAvailable() && mobile.isConnectedOrConnecting()) {
+            return "3G";
         }
+
+        return "No Network Available";
     }
 
     public String GetLocalIpAddress(Context context) {
