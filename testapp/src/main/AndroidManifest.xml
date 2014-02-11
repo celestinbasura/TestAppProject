@@ -32,6 +32,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.cele.testapp.ListActivity"
+            android:label="ListView"
+            android:parentActivityName="com.cele.testapp.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myfirstapp.MainActivity" />
+        </activity>
 
     </application>
 

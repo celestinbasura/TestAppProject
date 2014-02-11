@@ -49,6 +49,7 @@
 <Button
     android:layout_width="fill_parent"
     android:id="@+id/buttonShowPoints"
-    android:text="Go to list" />
+    android:text="Go to list"
+    android:onClick="goToList"/>
 </TableRow>
     </TableLayout>

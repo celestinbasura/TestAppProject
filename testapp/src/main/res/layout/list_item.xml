@@ -1,23 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".MainActivity" >
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:id="@+id/list_item"
-    android:gravity="center_vertical">
-
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/list_item_text_view"
-        android:textSize="20sp"
-        android:padding="10dp"
-        android:layout_marginLeft="5dp"/>
-    <Button
-        android:layout_marginLeft="200dp"
-        android:text="Btn"
+    <TextView
+        android:id="@+id/txtpointName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
-  </LinearLayout>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="User Name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/txtPointAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtpointName"
+        android:layout_marginTop="5dp"
+        android:text="Address"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnTurnOn"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFF"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:text="Edit Data"
+        android:textColor="#0099CC" />
+
+    <Button
+        android:id="@+id/btnTurnOff"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnTurnOn"
+        android:layout_marginTop="3dp"
+        android:background="#FFFFFF"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:text="Delete"
+        android:textColor="#0099CC" />
+
+    <TextView
+        android:id="@+id/txtCurrentState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtPointAddress"
+        android:layout_marginTop="5dp"
+        android:text="Location" />
+
+</RelativeLayout>

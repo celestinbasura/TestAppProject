@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.modbusclient.R;
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+public class MainActivity extends ActionBarActivity {
 
 
     Button btnShowPoints;
@@ -19,7 +19,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         WiFiState status = new WiFiState(this);
         setContentView(R.layout.connection_screen);
-
 
         // The important instances of the classes mentioned before
 
@@ -54,11 +53,19 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     }
 
+    public void goToList(View view) {
+        Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent);
+    }
 
 
-    @Override
+    }
+
+   /* @Override
     public void onClick(View v) {
-   /*     switch(v.getId()) {
+
+
+        switch(v.getId()) {
             case R.id.buttonShowPoints:
                 Intent mainIntent = new Intent(MainActivity.this, PointListAdapter.class);
                 Splash.this.startActivity(mainIntent);
@@ -121,8 +128,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         } catch (Exception e) {
             Log.d("MODBUS", "Error in reading/writing");
         }*/
-    }
 
 
-}
+
+
 
