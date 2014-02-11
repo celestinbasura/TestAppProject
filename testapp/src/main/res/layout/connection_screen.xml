@@ -4,7 +4,7 @@
     android:layout_width="match_parent">
 <TableRow>
     <TextView
-        android:text="Connected to:"
+        android:text="MODBUS @:"
         android:textSize="20dp"
         android:height="50dp"
         android:width ="150dp" />
