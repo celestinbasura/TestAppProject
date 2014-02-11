@@ -1,58 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-
-
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+<TableRow>
     <TextView
-        android:layout_height="40dp"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="30dp"
-        android:id="@+id/info"
-        android:hint="selected IP"
-        android:textSize="25dp"/>
-
+        android:text="Connected to:"
+        android:textSize="20dp"
+        android:height="50dp"
+        android:width ="150dp" />
     <TextView
-        android:layout_height="40dp"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="30dp"
-        android:hint="selected port"
-        android:textSize="25dp"/>
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:text="Go to list"
-        android:id="@+id/btnRead"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
-         />
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:text="Go to list"
-        android:id="@+id/btnWrite"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
-        />
-    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/txtconnectedIP"
 
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:text="Read"
-        android:id="@+id/btnRead"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="1dp"
-        />
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:text="Connect"
-        android:id="@+id/connect"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="100dp" />
-
-
-</LinearLayout>
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:width="150dp" />
+</TableRow>
+<TableRow>
+<TextView
+    android:text="Phone IP:"
+    android:textSize="20dp"
+    android:height="50dp"
+    android:width ="150dp" />
+<TextView
+    android:layout_marginTop="20dp"
+    android:id="@+id/txtphoneIP"
+    android:textSize="20dp"
+    android:layout_height="50dp"
+    android:layout_gravity="right"
+    android:width="150dp" />
+</TableRow>
+<TableRow>
+<TextView
+    android:text="SSID:"
+    android:textSize="20dp"
+    android:height="50dp"
+    android:width ="150dp" />
+    />
+<TextView
+    android:layout_marginTop="20dp"
+    android:id="@+id/txtSSID"
+    android:layout_height="50dp"
+    android:layout_gravity="right"
+    android:textSize="20dp"
+    android:width="150dp" />
+</TableRow>
+<TableRow>
+<Button
+    android:layout_width="fill_parent"
+    android:id="@+id/buttonShowPoints"
+    android:text="Go to list" />
+</TableRow>
+    </TableLayout>

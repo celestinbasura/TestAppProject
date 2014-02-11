@@ -1,35 +1,42 @@
 package com.cele.testapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.modbusclient.R;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
 
-
+    Button btnShowPoints;
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        WiFiState status = new WiFiState(this);
         setContentView(R.layout.connection_screen);
 
 
         // The important instances of the classes mentioned before
 
 
-        Button btnRead, btnWrite;
+        btnShowPoints = (Button) findViewById(R.id.buttonShowPoints);
         // associate the layout to the activity
         setContentView(R.layout.connection_screen);
+        //status.checkAvailableConnection();
+        TextView SSID, connectedIP, deviceIP;
+        SSID = (TextView) findViewById(R.id.txtSSID);
+        SSID.setText(status.getWifiName(this));
+        connectedIP = (TextView) findViewById(R.id.txtconnectedIP);
 
-        // I suppose of having a layout with two simple buttons
-        btnRead = (Button) findViewById(R.id.btnRead);
-        btnWrite = (Button) findViewById(R.id.btnWrite);
-        btnRead.setOnClickListener(this);
-        btnWrite.setOnClickListener(this);
+        deviceIP = (TextView) findViewById(R.id.txtphoneIP);
+        deviceIP.setText("" + status.GetLocalIpAddress(this));
+
+
 
     }
 
@@ -48,13 +55,22 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
 
+
     @Override
-    public void onClick (View view) {
+    public void onClick(View v) {
+   /*     switch(v.getId()) {
+            case R.id.buttonShowPoints:
+                Intent mainIntent = new Intent(MainActivity.this, PointListAdapter.class);
+                Splash.this.startActivity(mainIntent);
+                Splash.this.finish();
+                break;
+
+        }
         // start register
         int startReg;
 
         try {
-            /*if (view.getId() == R.id.btnRead) {
+            if (view.getId() == R.id.btnRead) {
                 startReg = 0;
 
                 ReadMultipleRegistersRequest req = null; //the request
@@ -96,7 +112,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 trans.execute();
                 res = (WriteMultipleRegistersResponse) trans.getResponse();
 
-            }*/
+            }
             if (view.getId() == R.id.connect){
                 ModBusConnect connect = new ModBusConnect();
                 connect.execute(true);
@@ -104,7 +120,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
         } catch (Exception e) {
             Log.d("MODBUS", "Error in reading/writing");
-        }
+        }*/
     }
 
 
