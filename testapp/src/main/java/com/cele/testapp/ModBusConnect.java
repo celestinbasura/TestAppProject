@@ -12,7 +12,7 @@ import java.net.InetAddress;
  */
 public class ModBusConnect extends AsyncTask<Boolean, Void, Boolean> {
 
-    String deviceAddress = "192.168.197.50";
+    String deviceAddress = "192.168.1.144";
 
     public String getDeviceIP(){
         return deviceAddress;
@@ -22,7 +22,7 @@ public class ModBusConnect extends AsyncTask<Boolean, Void, Boolean> {
     protected Boolean doInBackground (Boolean... integers) {
         // params comes from the execute() call: params[0] is the url.
         try {
-            int modbusPort = 1000;
+            int modbusPort = 502;
             TCPMasterConnection conn;
             InetAddress address;
             address = InetAddress.getByName(deviceAddress);
